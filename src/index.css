@@ -1,0 +1,38 @@
+@import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
+@import "tailwindcss";
+
+@theme {
+  /* 사용 색 */
+  --color-pf-white: #ffffff;
+  --color-pf-black: #121212;
+  --color-pf-bg: #f0ede8;
+  --color-pf-gray-100: #c4c4c4;
+  --color-pf-gray-200: #777777;
+  --color-pf-gray-300: #626262;
+  --color-pf-pink: #ccabdb;
+  --color-pf-violet: #8474a1;
+  --color-pf-blue: #6ec6ca;
+  --color-pf-emerald: #08979d;
+  --color-pf-green: #055b5c;
+
+  --animate-down-arrow: down-arrow 1.2s ease-in-out infinite;
+
+  @keyframes down-arrow {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(30px);
+      opacity: 0.1;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
