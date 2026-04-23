@@ -1,11 +1,10 @@
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { IoEllipsisHorizontal } from "react-icons/io5";
 import StackMain from "./StackMain";
 import StackSub from "./StackSub";
 
 const StackScreen = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const [progress, setProgress] = useState(0)
 
   return (
     <div ref={sectionRef} className="w-full min-h-dvh bg-pf-white">

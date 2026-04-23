@@ -2,17 +2,18 @@ import gsap from 'gsap'
 import { useEffect } from 'react'
 
 interface UseProjectScrollProps {
-  rootRef: React.RefObject<HTMLDivElement>;
+  rootRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export const useProjectScroll = ({ rootRef }: UseProjectScrollProps) => {
   useEffect(() => {
-    if (!rootRef.current) return;
+    const root = rootRef.current;
+    if (!root) return;
 
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray<HTMLElement>(".slide", rootRef.current);
-      const pinSection = rootRef.current.querySelector(".pin-section");
-      const pinWrapper = rootRef.current.querySelector(".pin-wrapper");
+      const pinSection = root.querySelector(".pin-section");
+      const pinWrapper = root.querySelector(".pin-wrapper");
 
       if (!slides.length || !pinSection) return;
 

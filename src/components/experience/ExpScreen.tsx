@@ -3,7 +3,6 @@ import ExpEducation from "./ExpEducation";
 import ExpAwards from "./ExpAwards";
 import ExpCerticiation from "./ExpCertification";
 import ExpLanguage from "./ExpLanguage";
-import { useExpScroll } from "../../hooks/useExpScroll";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
 const ExpScreen = () => {
