@@ -9,8 +9,8 @@ export const tsA: TSItem[] = [
   },
   {
     type: "decision",
-    title: "07시~07시 타임라인 재설계",
-    description: "00시 기준 시 점주가 아침에 전날 새벽 이상행동을 즉시 확인 불가. 실사용 시나리오 기반으로 범위 재정의 → 백 쿼리(LocalDateTime) · 프론트 그래프 축 함께 수정.",
+    title: "타임라인 구조 재설계",
+    description: "취약 시간대 정보를 점주가 한 번에 볼 수 있도록 하루의 기준을 00시가 아닌 07시부터 24시간으로 설정. 또한, 사용자가 관심있는 주제가 상단에 배치되도록 UX 개선.",
   },
   {
     type: "retrospect",

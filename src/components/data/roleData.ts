@@ -4,7 +4,7 @@ import dashboardImg from "../../assets/ssgg/dashboard.svg"
 export const rolesA = [
   {
     role: "시간별 인원 수 판단",
-    description: "YOLO11s 모델을 이용하여 실시간 영상에서 시간별 인원수를 구하고, FastAPI로 5초마다 DB에 저장하는 파이프라인 구현.",
+    description: "YOLO11s 모델을 이용하여 5초간격으로 실시간 영상에서 시간별 인원수를 구하고, FastAPI로 시간마다 DB에 저장하는 파이프라인 구현.",
     images: [
       { src: dashboardImg, label: "// 데일리 레포트 대시보드" }
     ]
