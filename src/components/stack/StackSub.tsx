@@ -1,13 +1,13 @@
 const subStacks = [
-  { name: "Tailwind CSS", description: "유틸리티 클래스 기반으로 일관된 디자인 시스템을 빠르게 구현할 수 있습니다."},
-  { name: "SCSS", description: "컴포넌트 단위로 스타일을 분리하고 변수*믹스인을 활용할 수 있습니다."},
-  { name: "Zustand", description: "보일러플레이트 없이 간결한 전역 상태를 설계하고 적용할 수 있습니다."},
-  { name: "Axios", description: "HTTP 클라이언트 라이브러리를 활용하여 API 통신을 효율적으로 처리할 수 있습니다."},
+  { name: "Tailwind CSS", description: "일관된 디자인 시스템을 빠르게 구현할 수 있습니다."},
+  { name: "SCSS", description: "컴포넌트 단위로 스타일을 분리하고 변수를 활용할 수 있습니다."},
+  { name: "Zustand", description: "간결한 전역 상태를 설계하고 적용할 수 있습니다."},
+  { name: "Axios", description: "HTTP 메서드를 활용하여 API 통신을 효율적으로 처리할 수 있습니다."},
   { name: "PWA", description: "서비스 워커와 웹 앱 매니페스트를 활용하여 오프라인에서도 작동하는 웹 애플리케이션을 개발할 수 있습니다."},
-  { name: "Git", description: "버전 관리 시스템을 활용하여 협업과 코드 관리를 효율적으로 수행할 수 있습니다."},
+  { name: "Git", description: "git을 통해 프로젝트를 관리하며, rebase 전략으로 충돌을 최소화 할 수 있습니다."},
   { name: "Figma", description: "디자인 도구를 활용하여 UI/UX 디자인을 시각화하고 협업할 수 있습니다."},
-  { name: "Vite / npm", description: "빠른 빌드와 개발 환경을 제공하는 도구를 활용하여 프로젝트를 효율적으로 관리할 수 있습니다."},
-  { name: "Jira", description: "프로젝트 관리 도구를 활용하여 작업을 체계적으로 관리하고 팀과의 협업을 원활하게 할 수 있습니다."},
+  { name: "Vite / npm", description: "빠른 빌드와 개발 환경을 제공하는 도구를 활용하여 프로젝트를 관리할 수 있습니다."},
+  { name: "Jira", description: "작업을 체계적으로 관리하고 팀과의 협업을 원활하게 할 수 있습니다."},
 ]
 
 const StackSub = () => {
