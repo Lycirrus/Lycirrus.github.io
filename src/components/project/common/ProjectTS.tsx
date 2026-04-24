@@ -73,7 +73,7 @@ const ProjectTS = ({ title, textColor, bgColor, items = [] }: ProjectTSProps) =>
                       <p className="text-xs md:text-sm text-pf-gray-300 leading-relaxed">{item.problem}</p>
                     </div>
                     <div className="flex gap-2 items-start">
-                      <span className={`text-xs font-medium flex-shrink-0 mt-0.5 ${textColor}`}>해결</span>
+                      <span className={`text-xs font-medium flex-shrink-0 mt-0.5 ${textColor}`}>대안</span>
                       <p className="text-xs md:text-sm text-pf-gray-300 leading-relaxed">{item.solution}</p>
                     </div>
                   </div>
