@@ -1,3 +1,4 @@
+import Navbar from "../components/navigator/Navbar";
 import MainScreen from "../components/main/MainScreen"
 import StackScreen from "../components/stack/StackScreen"
 import ExpScreen from "../components/experience/ExpScreen"
@@ -13,6 +14,7 @@ export function MainPage() {
   
   return (
     <div className="w-full bg-pf-black">
+      <Navbar />
       <MainScreen />
       <ExpScreen />
       <StackScreen />
