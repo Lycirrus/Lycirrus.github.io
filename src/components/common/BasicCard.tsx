@@ -14,7 +14,7 @@ const BasicCard = ({ children, color }: BasicCardProps) => {
   const before = `before:content-[''] before:absolute before:top-1/32 before:-left-0.5 before:h-15/16 before:w-0.75 ${ColorMap[color]} before:rounded-l-xl`
 
   return (
-    <div className={`relative flex flex-col justify-center gap-3 bg-pf-white rounded-lg border border-pf-gray-100 p-3 ${before}`}>
+    <div className={`relative flex flex-col justify-center gap-3 bg-pf-white dark:bg-pf-bg-dark rounded-lg border border-pf-gray-100 dark:border-pf-gray-300 p-3 ${before}`}>
       {children}
     </div>
   )

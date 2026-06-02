@@ -1,13 +1,14 @@
 @import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
 @import "tailwindcss";
 
-/* @custom-variant dark (&:where(.dark, .dark *)) */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* 사용 색 */
   --color-pf-white: #ffffff;
   --color-pf-black: #121212;
   --color-pf-bg: #f0ede8;
+  --color-pf-bg-dark: #1b1e23;
   --color-pf-gray-100: #c4c4c4;
   --color-pf-gray-200: #777777;
   --color-pf-gray-300: #626262;

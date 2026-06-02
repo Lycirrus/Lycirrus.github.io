@@ -24,19 +24,19 @@ const ProjectTitle = ({ logo, stacks, title, description, outlines, details, ima
           </div>
         </div>
         <div className="flex flex-col justify-center gap-1">
-          <p className="font-bold text-5xl pt-3">{title}</p>
-          <p className="text-xs md:text-sm text-pf-gray-300">{description}</p>
+          <p className="font-bold text-5xl pt-3 dark:text-pf-white">{title}</p>
+          <p className="text-xs md:text-sm text-pf-gray-300 dark:text-pf-gray-100">{description}</p>
         </div>
         <div>
-          <div className="pt-6 font-semibold">| 프로젝트 개요</div>
+          <div className="pt-6 font-semibold dark:text-pf-white">| 프로젝트 개요</div>
           {outlines.map((outline, i) => (
-            <div key={i} className="pl-1 pb-1">
+            <div key={i} className="pl-1 pb-1 dark:text-pf-gray-100">
               {outline}
             </div>
           ))}
           <div className="flex flex-col pt-3 gap-1 md:pt-6">
             {details.map((detail, i) => (
-              <div key={i} className="text-xs md:text-sm text-pf-gray-300">
+              <div key={i} className="text-xs md:text-sm text-pf-gray-300 dark:text-pf-gray-200">
                 {detail}
               </div>
             ))}

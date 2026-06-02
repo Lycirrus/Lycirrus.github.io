@@ -16,17 +16,17 @@ const ExpCertification = () => {
 
   return (
     <div className="flex flex-col gap-3 career-card">
-      <p className="font-bold text-lg md:text-xl text-pf-black">Certificate</p>
+      <p className="font-bold text-lg md:text-xl text-pf-black dark:text-pf-white">Certificate</p>
       <div data-wrap>
         <BasicCard color="violet">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {certs.map((cert, i) => (
               <div key={i} className="flex flex-col gap-3 min-w-0">
                 <div>
-                  <p className="text-sm md:text-base break-keep font-semibold text-pf-gray-300">{cert.name}</p>
-                  <p className="text-xs md:text-sm text-pf-gray-200">{cert.date}</p>
+                  <p className="text-sm md:text-base break-keep font-semibold text-pf-gray-300 dark:text-pf-white">{cert.name}</p>
+                  <p className="text-xs md:text-sm text-pf-gray-200 dark:text-pf-gray-100">{cert.date}</p>
                 </div>
-                { i < certs.length - re && <hr className="border-dashed border-pf-gray-100" />}
+                { i < certs.length - re && <hr className="border-dashed border-pf-gray-100 dark:border-pf-gray-300" />}
               </div>
             ))}
           </div>

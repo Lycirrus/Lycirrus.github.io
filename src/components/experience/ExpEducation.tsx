@@ -8,16 +8,16 @@ const edu = [
 const ExpEducation = () => {
   return (
     <div className="flex flex-2 flex-col gap-3 career-card">
-      <p className="font-bold text-lg md:text-xl text-pf-black">Education</p>
+      <p className="font-bold text-lg md:text-xl text-pf-black dark:text-pf-white">Education</p>
       <div>
         <BasicCard color="blue">
           {edu.map((e, i) => (
             <div key={i} className="flex flex-col gap-3 min-w-0">
               <div>
-                <p className="text-sm md:text-base font-semibold text-pf-gray-300">{e.name}</p>
-                <p className="text-xs md:text-sm text-pf-gray-200">{e.period}</p>
+                <p className="text-sm md:text-base font-semibold text-pf-gray-300 dark:text-pf-white">{e.name}</p>
+                <p className="text-xs md:text-sm text-pf-gray-200 dark:text-pf-gray-100">{e.period}</p>
               </div>
-              {i !== edu.length - 1 && <hr className="border-dashed border-pf-gray-100" />}
+              {i !== edu.length - 1 && <hr className="border-dashed border-pf-gray-100 dark:border-pf-gray-300" />}
             </div>
           ))}
         </BasicCard>

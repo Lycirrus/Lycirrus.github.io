@@ -7,17 +7,17 @@ const awards = [
 
 const ExpAwards = () => {
   return (
-    <div className="flex flex-col gap-3 career-card" data-sec>
-      <p className="font-bold text-lg md:text-xl text-pf-black" data-title>Awards</p>
+    <div className="flex flex-col gap-3 career-card">
+      <p className="font-bold text-lg md:text-xl text-pf-black dark:text-pf-white">Awards</p>
       <div data-wrap>
         <BasicCard color="green">
           {awards.map((award, i) => (
             <div key={i} className="flex flex-col gap-3 min-w-0">
               <div>
-                <p className="text-sm md:text-base font-semibold text-pf-gray-300">{award.name}</p>
-                <p className="text-xs md:text-sm text-pf-gray-200">{award.date}</p>
+                <p className="text-sm md:text-base font-semibold text-pf-gray-300 dark:text-pf-white">{award.name}</p>
+                <p className="text-xs md:text-sm text-pf-gray-200 dark:text-pf-gray-100">{award.date}</p>
               </div>
-              {i !== awards.length - 1 && <hr className="border-dashed border-pf-gray-100" />}
+              {i !== awards.length - 1 && <hr className="border-dashed border-pf-gray-100 dark:border-pf-gray-300" />}
             </div>
           ))}
         </BasicCard>

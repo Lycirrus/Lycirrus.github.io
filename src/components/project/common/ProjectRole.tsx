@@ -23,13 +23,9 @@ const ProjectRole = ({ title, textColor, bgColor, roles = [] }: ProjectRoleProps
     <div className="h-full flex flex-col gap-6">
       <div className="flex flex-col gap-3">
         <p className={`text-sm md:text-base tracking-widest ${textColor}`}>{title}</p>
-        <p className="font-semibold text-lg md:text-xl">담당 역할</p>
+        <p className="font-semibold text-lg md:text-xl dark:text-pf-white">담당 역할</p>
       </div>
-
-      {/* flex-1 + min-h-0 — 남은 높이를 차지하되 넘치지 않음 */}
       <div className={`flex-1 min-h-0 grid gap-8 ${hasImages ? "grid-cols-[1fr_1.2fr]" : "grid-cols-1"} items-start pb-12`}>
-
-        {/* 좌측 이미지 — h-full로 부모 높이에 맞춤 */}
         {hasImages && (
           <div className="h-full min-h-0 flex flex-col gap-5">
             {roles.map((r, ri) =>
@@ -49,7 +45,7 @@ const ProjectRole = ({ title, textColor, bgColor, roles = [] }: ProjectRoleProps
                       />
                     ))}
                   </div>
-                  <p className="text-xs text-pf-gray-200 flex-shrink-0">{r.images[0].label}</p>
+                  <p className="text-xs text-pf-gray-200 dark:text-pf-gray-100 flex-shrink-0">{r.images[0].label}</p>
                 </div>
               ) : null
             )}
@@ -62,9 +58,9 @@ const ProjectRole = ({ title, textColor, bgColor, roles = [] }: ProjectRoleProps
             <div key={i} className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
                 <span className={`inline-block w-[3px] h-[14px] rounded-full flex-shrink-0 ${bgColor}`} />
-                <p className="font-semibold text-sm md:text-base text-pf-black">{r.role}</p>
+                <p className="font-semibold text-sm md:text-base text-pf-black dark:text-pf-white">{r.role}</p>
               </div>
-              <p className="text-xs md:text-sm text-pf-gray-300 leading-relaxed pl-[11px]">
+              <p className="text-xs md:text-sm text-pf-gray-300 dark:text-pf-gray-100 leading-relaxed pl-[11px]">
                 {r.description}
               </p>
             </div>

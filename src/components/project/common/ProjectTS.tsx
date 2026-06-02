@@ -37,7 +37,7 @@ const ProjectTS = ({ title, textColor, bgColor, items = [] }: ProjectTSProps) =>
     <div className="h-full flex flex-col gap-6">
       <div className="flex flex-col gap-3">
         <p className={`text-sm md:text-base tracking-widest ${textColor}`}>{title}</p>
-        <p className="font-semibold text-lg md:text-xl">트러블슈팅 & 회고</p>
+        <p className="font-semibold text-lg md:text-xl dark:text-pf-white">트러블슈팅 & 회고</p>
       </div>
 
       <div className="flex-1 flex flex-col justify-center -mt-[30px] pb-12">
@@ -47,21 +47,21 @@ const ProjectTS = ({ title, textColor, bgColor, items = [] }: ProjectTSProps) =>
             return (
               <div
                 key={i}
-                className={`flex flex-col gap-3 bg-pf-white rounded-xl p-5 border border-pf-gray-100
+                className={`flex flex-col gap-3 bg-pf-white dark:bg-pf-black rounded-xl p-5 border border-pf-gray-100 dark:border-pf-gray-300
                   ${isOdd && isLast ? "col-span-2" : ""}`}
               >
                 {/* 배지 */}
                 <span className={`text-xs font-medium px-2 py-0.5 rounded-full w-fit
                   ${item.type === "trouble" ? "bg-red-50 text-red-400" :
                     item.type === "decision" ? `bg-opacity-10 ${bgColor.replace("bg-", "bg-")}/10 ${textColor}` :
-                    "bg-pf-gray-100/40 text-pf-gray-200"}`}
+                    "bg-pf-gray-100/40 text-pf-gray-200 dark:text-pf-gray-100"}`}
                   style={item.type === "decision" ? {} : {}}
                 >
                   {BADGE[item.type]}
                 </span>
 
                 {/* 제목 */}
-                <p className="font-semibold text-sm md:text-base text-pf-black leading-snug">
+                <p className="font-semibold text-sm md:text-base text-pf-black dark:text-pf-white leading-snug">
                   {item.title}
                 </p>
 
@@ -70,15 +70,15 @@ const ProjectTS = ({ title, textColor, bgColor, items = [] }: ProjectTSProps) =>
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-2 items-start">
                       <span className="text-xs text-red-400 font-medium flex-shrink-0 mt-0.5">문제</span>
-                      <p className="text-xs md:text-sm text-pf-gray-300 leading-relaxed">{item.problem}</p>
+                      <p className="text-xs md:text-sm text-pf-gray-300 dark:text-pf-gray-100 leading-relaxed">{item.problem}</p>
                     </div>
                     <div className="flex gap-2 items-start">
                       <span className={`text-xs font-medium flex-shrink-0 mt-0.5 ${textColor}`}>대안</span>
-                      <p className="text-xs md:text-sm text-pf-gray-300 leading-relaxed">{item.solution}</p>
+                      <p className="text-xs md:text-sm text-pf-gray-300 dark:text-pf-gray-100 leading-relaxed">{item.solution}</p>
                     </div>
                   </div>
                 ) : (
-                  <p className="text-xs md:text-sm text-pf-gray-300 leading-relaxed">
+                  <p className="text-xs md:text-sm text-pf-gray-300 dark:text-pf-gray-100 leading-relaxed">
                     {item.description}
                   </p>
                 )}
