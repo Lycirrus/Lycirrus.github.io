@@ -5,10 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
-    <script type="module" crossorigin src="/assets/index-CsSNmVv0.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dm2IA6pM.css">
+    <script>
+      document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      )
+    </script>
+    <script type="module" crossorigin src="/assets/index-CO4KnUjM.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DkvEmkvL.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>
