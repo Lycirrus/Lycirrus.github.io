@@ -4,7 +4,7 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-    { label: "메인", id: "main" },
+    { label: "표지", id: "main" },
     { label: "기본 이력", id: "exp" },
     { label: "기술 스택", id: "stack" },
     { label: "시시각각", id: "projectA" },
