@@ -4,7 +4,7 @@ import { FiMail, FiGithub } from "react-icons/fi"
 
 const MainScreen = () => {
   return (
-    <div className="w-full h-dvh bg-pf-white dark:bg-pf-black relative overflow-hidden">
+    <div className="w-full h-dvh bg-pf-white dark:bg-pf-black relative overflow-hidden" id="main">
       <ThreeCircles />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">

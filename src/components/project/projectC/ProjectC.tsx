@@ -45,7 +45,7 @@ const ProjectC = () => {
   useProjectScroll({ rootRef });
 
   return (
-    <div className="w-full bg-pf-bg dark:bg-pf-bg-dark" ref={rootRef}>
+    <div className="w-full bg-pf-bg dark:bg-pf-bg-dark" ref={rootRef} id="projectC">
       <div className="pin-wrapper h-dvh max-w-7xl mx-auto py-3 px-6 md:px-12">
         <div className="h-full p-6 md:p-12 rounded-2xl">
           <div className="flex items-center pb-6 md:pb-12">

@@ -8,7 +8,7 @@ const StackScreen = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div ref={sectionRef} className="w-full min-h-dvh bg-pf-white dark:bg-pf-black">
+    <div ref={sectionRef} className="w-full min-h-dvh bg-pf-white dark:bg-pf-black" id="stack">
       <div className="h-full max-w-7xl mx-auto py-3 px-6 md:px-12">
         <div className="h-full p-6 md:p-12 rounded-2xl">
           <div className="flex items-center pb-6 md:pb-12">
