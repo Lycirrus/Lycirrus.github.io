@@ -8,8 +8,8 @@ interface NavigatorProps {
 const Navigator = ({ isOpen }: NavigatorProps) => {
     const { scrollToSection } = useScrollNav();
 
-    const baseItems = navItems.slice(0, 3);
-    const projectItems = navItems.slice(3);
+    const baseItems = navItems.slice(0, 1);
+    const projectItems = navItems.slice(1, 4);
 
     return (
         <div className={`fixed right-5 top-16 w-40 rounded-2xl border-2 border-pf-gray-200 dark:border-pf-gray-100 dark:bg-pf-black bg-pf-white p-2 shadow-lg

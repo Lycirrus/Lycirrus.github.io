@@ -1,8 +1,6 @@
 import Navbar from "../components/navigator/Navbar";
 import Navigator from "../components/navigator/Navigator";
 import MainScreen from "../components/main/MainScreen"
-import StackScreen from "../components/stack/StackScreen"
-import ExpScreen from "../components/experience/ExpScreen"
 import ProjectA from "../components/project/projectA/ProjectA";
 import ProjectB from "../components/project/projectB/ProjectB";
 import ProjectC from "../components/project/projectC/ProjectC";
@@ -24,8 +22,6 @@ export function MainPage() {
       <Navbar isOpen={isOpen} handleMenuClick={handleMenuClick} />
       <Navigator isOpen={isOpen} />
       <MainScreen />
-      <ExpScreen />
-      <StackScreen />
       <ProjectA />
       <ProjectB />
       <ProjectC />
