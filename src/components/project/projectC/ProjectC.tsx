@@ -10,7 +10,7 @@ import titleImage from "../../../assets/mw/title_image.svg"
 import { rolesC } from "../../data/roleData"
 import { tsC } from "../../data/tsData"
 
-const stacks = ["React", "TypeScript", "PWA"]
+const stacks = ["React", "Tanstack Query", "PWA"]
 const outlines = [
   "• 교실 내 가상 경제 시스템을 통한 실전 금융 교육 제공",
   "• 학생 모바일 웹앱 / 선생님 PC 웹으로 역할별 최적화 UX 설계",
@@ -18,8 +18,8 @@ const outlines = [
   "• PWA 적용으로 앱 설치 없이 네이티브 앱 경험 제공"
 ]
 const details = [
-  "2025.04.14 ~ 2025.05.22",
-  "6명 (Full-Stack 3명, Frontend 1명, Backend/Infra 1명, AI 1명)"
+  "2025.02.24 ~ 2025.04.11",
+  "6명 (FE 2명, Full-Stack 2명, BE/Infra 1명, BE/AI 1명)"
 ]
 const features = [
   {

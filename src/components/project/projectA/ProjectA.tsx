@@ -10,7 +10,7 @@ import titleImage from "../../../assets/ssgg/title_image.svg"
 import { rolesA } from "../../data/roleData"
 import { tsA } from "../../data/tsData"
 
-const stacks = ["React", "TypeScript", "SCSS"]
+const stacks = ["React", "TypeScript", "FastAPI"]
 const outlines = [
   "• 무인 매장 점주들의 CCTV 데이터 활용 및 부담 완화",
   "• VLM을 이용하여 실시간으로 이상행동 자동 감지",
@@ -19,7 +19,7 @@ const outlines = [
 ]
 const details = [
   "2025.04.14 ~ 2025.05.22",
-  "6명 (Full-Stack 3명, Frontend 1명, Backend/Infra 1명, AI 1명)",
+  "6명 (Full-Stack 3명, FE 1명, BE/Infra 1명, AI 1명)",
   "SSAFY 12기 자율 프로젝트 우수상 · 에스원 기업연계"
 ]
 const features = [

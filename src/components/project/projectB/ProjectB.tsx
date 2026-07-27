@@ -19,7 +19,7 @@ const outlines = [
 ]
 const details = [
   "2025.01.13 ~ 2025.02.21",
-  "6명 (Frontend 3명, Backend 2명, Infra 1명)",
+  "6명 (FE 3명, BE 2명, Infra 1명)",
   "SSAFY 12기 공통 프로젝트 우수상"
 ]
 const features = [
