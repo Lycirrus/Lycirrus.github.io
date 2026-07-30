@@ -13,7 +13,7 @@ const Navigator = ({ isOpen }: NavigatorProps) => {
 
     return (
         <div className={`fixed right-5 top-16 w-40 rounded-2xl border-2 border-pf-gray-200 dark:border-pf-gray-100 dark:bg-pf-black bg-pf-white p-2 shadow-lg
-                transition-all duration-300 ease-out origin-top z-2
+                transition-all duration-300 ease-out origin-top z-20
                 ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
             <div className="flex flex-col gap-1">
                 {baseItems.map((item) => (

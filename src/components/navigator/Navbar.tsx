@@ -13,7 +13,7 @@ const Navbar = ({ isOpen, handleMenuClick }: NavbarProps) => {
     const { isDark, toggle } = useDarkMode();
 
     return (
-        <div className="fixed right-4 top-4 w-16 md:w-22 h-8 flex justify-center z-1 rounded-full border-2 border-pf-gray-200 dark:border-pf-gray-100 dark:bg-pf-black bg-pf-white">
+        <div className="fixed right-4 top-4 w-16 md:w-22 h-8 flex justify-center z-20 rounded-full border-2 border-pf-gray-200 dark:border-pf-gray-100 dark:bg-pf-black bg-pf-white">
             <div className="flex w-full justify-between items-center px-1 md:px-3">
                 <button className="w-1/2 flex justify-center" onClick={toggle}>
                     {isDark ? <IoSunny className="fill-pf-white" /> : <IoMoon className="fill-pf-gray-300" />}

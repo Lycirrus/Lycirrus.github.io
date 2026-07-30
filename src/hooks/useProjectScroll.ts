@@ -24,19 +24,21 @@ export const useProjectScroll = ({ rootRef }: UseProjectScrollProps) => {
         scrollTrigger: {
           trigger: pinWrapper,
           start: "top top",
-          end: `+=${(slides.length - 1) * 200}%`,
+          end: `+=${slides.length * 130}%`,
           pin: pinWrapper,
           scrub: 1,
           pinSpacing: true,
         }
       })
 
+      tl.to({}, { duration: 0.8 })
+
       slides.forEach((slide: HTMLElement, i) => {
         const previousSlide = slides[i - 1] as HTMLElement;
         if (!previousSlide) return;
         tl.to(slide, { autoAlpha: 1, duration: 0.2 })
           .to(previousSlide, { autoAlpha: 0, duration: 0.2 }, "<")
-          .to({}, {duration: 1.5})
+          .to({}, {duration: 1.2})
       })
     }, rootRef);
 
