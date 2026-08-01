@@ -44,6 +44,7 @@ const features = [
 const ProjectB = () => {
   const rootRef = useRef<HTMLDivElement>(null);
   useProjectScroll({ rootRef });
+  const listLength = tsB.length;
 
   return (
     <div className="w-full bg-pf-white dark:bg-pf-black" ref={rootRef} id="projectB">
@@ -78,14 +79,17 @@ const ProjectB = () => {
                 roles={rolesB}
               />
             </div>
-            <div className="absolute inset-0 slide">
-              <ProjectTS 
-                title="Chocoletter" 
-                textColor="text-pf-pink" 
-                bgColor="bg-pf-pink" 
-                items={tsB} 
-              />
-            </div>
+            {tsB.map((item, i) => (
+              <div key={i} className="absolute inset-0 slide">
+                <ProjectTS 
+                  title="Chocoletter" 
+                  textColor="text-pf-pink"
+                  item={item}
+                  listLength={listLength}
+                  index={i}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

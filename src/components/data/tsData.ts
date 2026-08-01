@@ -1,60 +1,63 @@
-import type { TSItem } from "../project/common/ProjectTS"
+export type TSItem = {
+  title: string
+  image: string
+  problem: string[]
+  solution: string[]
+  result: string[]
+}
+
+export type TSItemList = TSItem[]
 
 // ─── A: 시시각각 ──────────────────────────────────────────
-export const tsA: TSItem[] = [
+export const tsA: TSItemList = [
   {
-    type: "decision",
     title: "YOLO11s 선택 — 최소 부하, 최대 정확도",
-    description: "24시간 운영 서비스 특성상 리소스 최소화 필요. 공식 성능 비교표에서 동급 경량 모델 중 YOLO11s가 YOLO8s 대비 정확도 우위를 확인 후 채택.",
+    image: "",
+    problem: ["24시간 운영 서비스 특성상 리소스 최소화 필요", "a", "YOLO8s 대비 YOLO11s가 경량화 모델임에도 정확도 우위 확인 필요"],
+    solution: ["공식 성능 비교표에서 동급 경량 모델 중 YOLO11s가 YOLO8s 대비 정확도 우위를 확인 후 채택", "YOLO11s 모델을 기반으로 학습 데이터셋 구성 및 학습 진행", "YOLO11s 모델을 기반으로 한 이상행동 감지 모델을 서비스에 적용", "YOLO11s 모델을 기반으로 한 이상행동 감지 모델을 서비스에 적용"],
+    result: ["리소스 소모 감소", "정확도 향상", "실시간 이상행동 감지 및 정보 제공 무인 매장 AI 보안 솔루션 구현", "24시간 운영 서비스 특성상 리소스 최소화 필요"]
   },
   {
-    type: "decision",
-    title: "타임라인 구조 재설계",
-    description: "취약 시간대 정보를 점주가 한 번에 볼 수 있도록 하루의 기준을 00시가 아닌 07시부터 24시간으로 설정. 또한, 사용자가 관심있는 주제가 상단에 배치되도록 UX 개선.",
-  },
-  {
-    type: "retrospect",
-    title: "GPT 일일 보고서 미완성",
-    description: "DB 데이터를 JSON으로 구성해 GPT에 전달했으나, 이상행동 데이터가 있음에도 '이상행동 없음' 출력. 프롬프트 설계와 데이터 구조 정합성 부족으로 판단. UI 공간만 남기고 기능 미적용.",
-  },
-  {
-    type: "retrospect",
-    title: "히트맵 → 인원수 카운트로 축소",
-    description: "테스트 환경(2평, CCTV 4대)에서 구역별 히트맵의 실용성 퇴색. 구현 난도와 현실 제약을 복합 고려해 인원수 통계로 전환. 서비스 핵심 가치는 유지하며 범위를 현실에 맞게 조정.",
-  },
+    title: "YOLO11s 학습 데이터셋 구성 — 이상행동 감지 모델 학습",
+    image: "",
+    problem: ["YOLO11s 모델 학습을 위한 이상행동 감지 데이터셋 구성 필요", "YOLO11s 모델 학습을 위한 이상행동 감지 데이터셋 구성 필요"],
+    solution: ["YOLO11s 모델 학습을 위한 이상행동 감지 데이터셋 구성 필요", "YOLO11s 모델 학습을 위한 이상행동 감지 데이터셋 구성 필요"],
+    result: ["YOLO11s 모델 학습을 위한 이상행동 감지 데이터셋 구성 필요", "YOLO11s 모델 학습을 위한 이상행동 감지 데이터셋 구성 필요"]
+  }
 ]
 
 // ─── B: 초코레터 ──────────────────────────────────────────
-export const tsB: TSItem[] = [
+export const tsB: TSItemList = [
   {
-    type: "trouble",
     title: "iOS 기기에서 한쪽 음성 미출력",
-    problem: "준비 버튼을 먼저 누른 사용자가 publisher, 나중에 누른 사용자가 subscriber로 등록되는 구조에서, subscriber의 audio track이 ICE 협상 완료 이전에 세션에 등록되지 않은 것으로 판단.",
-    solution: "publish 시점부터 audio: true로 통일, 5초 대기방에서도 오디오를 활성화 상태로 유지. audio on/off 전환 로직을 제거해 연결 시점 불일치 우회.",
+    image: "",
+    problem: ["준비 버튼을 먼저 누른 사용자가 publisher, 나중에 누른 사용자가 subscriber로 등록되는 구조에서, subscriber의 audio track이 ICE 협상 완료 이전에 세션에 등록되지 않은 것으로 판단."],
+    solution: ["publish 시점부터 audio: true로 통일, 5초 대기방에서도 오디오를 활성화 상태로 유지. audio on/off 전환 로직을 제거해 연결 시점 불일치 우회."],
+    result: ["iOS 기기에서도 양쪽 음성 출력"]
   },
   {
-    type: "retrospect",
-    title: "4주차 배포 후 사용자 피드백 반영",
-    description: "출시 후 '서비스를 한 번에 파악하기 어렵다'는 피드백 수령 → 계정 당 최초 진입 시 튜토리얼 오버레이 추가. 5주차에 화상 채팅·문자 채팅 기능 업데이트까지 애자일하게 배포 진행.",
-  },
-]
+    title: "iOS 기기에서 영상 미출력",
+    image: "",
+    problem: ["iOS 기기에서 영상이 출력되지 않는 문제 발생."],
+    solution: ["iOS 기기에서 영상이 출력되지 않는 문제 발생."],
+    result: ["iOS 기기에서도 영상 출력"]
+  }
+] 
 
 // ─── C: 머니위즈 ──────────────────────────────────────────
-export const tsC: TSItem[] = [
+export const tsC: TSItemList = [
   {
-    type: "trouble",
     title: "낙관적 업데이트 미동작",
-    problem: "직업 등록 mutation에서 query key를 올바르게 사용했음에도 등록 즉시 UI에 반영되지 않는 문제 발생.",
-    solution: "onMutate에서 queryClient.setQueryData를 호출할 때, 직업 목록을 불러오는 API의 응답 JSON 형식과 동일하게 데이터를 구성해 set하여 해결.",
+    image: "",
+    problem: ["직업 등록 mutation에서 query key를 올바르게 사용했음에도 등록 즉시 UI에 반영되지 않는 문제 발생."],
+    solution: ["onMutate에서 queryClient.setQueryData를 호출할 때, 직업 목록을 불러오는 API의 응답 JSON 형식과 동일하게 데이터를 구성해 set하여 해결."],
+    result: ["낙관적 업데이트 기능 정상 작동"]
   },
   {
-    type: "decision",
-    title: "768px 기준 역할 분기",
-    description: "학생은 모바일, 선생님은 교내 PC로 접속한다는 기획 전제 하에 별도 역할 선택 UI 없이 화면 너비로 자연스럽게 분기. 로그인·회원가입 모두 동일 기준 적용.",
-  },
-  {
-    type: "decision",
-    title: "챗봇 스트리밍 응답 처리",
-    description: "Python FastAPI와 연결 시 fetch + ReadableStream으로 응답을 청크 단위로 수신해 타이핑 효과 구현. 글씨 크기·다크모드 설정을 로컬 상태로 관리해 UX 개선.",
-  },
+    title: "직업 등록 후 직업 목록 미갱신",
+    image: "",
+    problem: ["직업 등록 mutation에서 query key를 올바르게 사용했음에도 등록 즉시 직업 목록이 갱신되지 않는 문제 발생."],
+    solution: ["onSuccess에서 queryClient.invalidateQueries를 호출해 직업 목록을 불러오는 API를 재요청하도록 처리하여 해결."],
+    result: ["직업 등록 후 직업 목록 정상 갱신"]
+  }
 ]
