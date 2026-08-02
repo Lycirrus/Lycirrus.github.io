@@ -55,7 +55,7 @@ const ProjectB = () => {
             <IoEllipsisHorizontal className="fill-pf-gray-200 dark:fill-pf-gray-100 mr-3" />
             <p className="text-xs md:text-sm text-pf-gray-200 dark:text-pf-gray-100">프로젝트</p>
           </div>
-          <div className="relative h-full overflow-hidden pin-section">
+          <div className="relative h-full pin-section">
             <div className="absolute inset-0 slide">
               <ProjectTitle 
                 logo={logo} 
@@ -84,6 +84,7 @@ const ProjectB = () => {
                 <ProjectTS 
                   title="Chocoletter" 
                   textColor="text-pf-pink"
+                  bgColor="bg-pf-pink"
                   item={item}
                   listLength={listLength}
                   index={i}
