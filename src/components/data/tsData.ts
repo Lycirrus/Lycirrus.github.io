@@ -11,16 +11,15 @@ export type TSItemList = TSItem[]
 // ─── A: 시시각각 ──────────────────────────────────────────
 export const tsA: TSItemList = [
   {
-    title: "Python datetime.now() timezone 미설정으로 데이터 생성 시각과 표출 시각 사이 9시간 오프셋 발생, timezone 명시로 해결",
+    title: "Python에서 timezone 미설정으로 데이터 생성 시각과 표출 시각 사이 9시간 오프셋 발생",
     image: "",
     problem: [
-      "본인이 담당한 레포트 화면 작업 중, 특정 시간대 인원 통계가 실제 촬영 시각과 9시간 어긋나 있는 것을 발견",
-      "infra 팀원에게 DB 저장 시각을 확인 요청해, AI 서버가 timezone 정보 없는 naive datetime을 그대로 전송하고 있음을 특정",
-      "서버 OS가 UTC 환경이라 naive datetime 직렬화 시 UTC 기준 isoformat이 생성되고 있었음을 확인"
+      "AI 서버에서 스케줄링을 통해 정시마다 인원 통계와 타임스탬프를 BE로 전송하는 구조로 설계",
+      "BE는 Asia/Seoul(KST) 기준으로 데이터를 저장하고 조회하도록 설계되어 있었음",
+      "레포트 화면 작업 중 화면 표출 시각이 실제 시각보다 9시간 전으로 표시되는 문제를 발견했고, AI 서버가 datetime.now()로 timezone을 명시하지 않은 채 UTC 환경의 서버 OS 기준으로 시각을 생성해 BE와 9시간 차이가 발생하고 있었음"
     ],
     solution: [
-      "AI 서버(Python) 코드에서 datetime.now() 대신 timezone(timedelta(hours=9))으로 KST를 명시",
-      "FE 역할이었지만 원인이 AI 서버 코드에 있어 해당 파일까지 직접 수정"
+      "AI 서버(Python)에서 timezone(timedelta(hours=9))으로 KST를 명시",
     ],
     result: [
       "KST 기준으로 정확한 시각 저장 및 조회",

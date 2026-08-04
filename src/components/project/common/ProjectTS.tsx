@@ -37,7 +37,7 @@ const ProjectTS = ({ title, textColor, bgColor, item, listLength, index }: Proje
               {item.image}
             </div>
             <div className="flex flex-col gap-3 pb-6">
-              <p className="font-semibold">문제 확인</p>
+              <p className="font-semibold">문제 원인</p>
               <ul>
                 {item.problem.map((problem, i) => (
                   <li key={i} className="leading-snug">
