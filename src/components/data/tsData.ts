@@ -11,7 +11,7 @@ export type TSItemList = TSItem[]
 // ─── A: 시시각각 ──────────────────────────────────────────
 export const tsA: TSItemList = [
   {
-    title: "Python에서 timezone 미설정으로 데이터 생성 시각과 표출 시각 사이 9시간 오프셋 발생",
+    title: "Python에서 timezone 미설정으로 데이터 생성 시각과 표출 시각 사이 9시간 차이 발생 문제 해결",
     image: "",
     problem: [
       "AI 서버에서 스케줄링을 통해 정시마다 인원 통계와 타임스탬프를 BE로 전송하는 구조로 설계",
@@ -26,7 +26,7 @@ export const tsA: TSItemList = [
     ]
   },
   {
-    title: "AI→BE→FE 전 레이어 추적으로 undefined TypeError 크래시 원인 특정 및 해결",
+    title: "데이터 결측 상황에서도 안정적인 차트 표출을 위해 없는 시간대 값을 기본값으로 대체하여 크래시 해결",
     image: "",
     problem: [
       "AI 서버는 집계된 데이터가 있을 때만 BE로 전송하도록 구현되어 있고, RTSP 스트림 다운이나 서버 재시작 등으로 집계 자체가 비는 예외 상황은 미반영",
@@ -47,7 +47,7 @@ export const tsA: TSItemList = [
 // ─── B: 초코레터 ──────────────────────────────────────────
 export const tsB: TSItemList = [
   {
-    title: "화상통화 입장 시점에 따른 오디오 미출력, 3가지 가설 검증 끝에 재현 조건 자체를 제거해 해결",
+    title: "늦게 입장한 참가자의 정상적인 오디오 수신을 위해 지연 발행 구조를 제거하고 즉시 publish하여 오디오 미출력 문제 해결",
     image: "",
     problem: [
       "늦게 입장한 참가자 쪽에서 상대방 오디오가 들리지 않는 증상 발견",
@@ -71,7 +71,7 @@ export const tsB: TSItemList = [
 // ─── C: 머니위즈 ──────────────────────────────────────────
 export const tsC: TSItemList = [
   {
-    title: "낙관적 업데이트 미반영, local state 참조 방식과 캐시 응답 스키마 불일치라는 두 가지 원인 규명",
+    title: "직업 등록 결과의 즉각적인 화면 반영을 위해 캐시를 직접 참조하고 응답 데이터 형식을 맞추어 낙관적 업데이트 미반영 문제 해결",
     image: "",
     problem: [
       "직업 등록 mutation에서 query key를 올바르게 사용했음에도 등록 즉시 화면에 반영되지 않음을 발견",
@@ -89,7 +89,7 @@ export const tsC: TSItemList = [
     ]
   },
   {
-    title: "챗봇 체감 응답 대기시간 감소를 위해 fetch ReadableStream을 활용하여 스트리밍 방식으로 변경",
+    title: "챗봇 체감 응답 대기시간 감소를 위해 fetch ReadableStream을 활용하여 스트리밍 방식으로 전환",
     image: "",
     problem: [
       "FE에서 입력받은 질문과 회원ID를 BE(Python)로 전송하고, RAG 검색 기반 AI 응답 생성 후 FE로 반환하는 구조",
