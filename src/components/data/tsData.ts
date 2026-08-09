@@ -74,18 +74,17 @@ export const tsC: TSItemList = [
     title: "직업 등록 결과의 즉각적인 화면 반영을 위해 캐시를 직접 참조하고 응답 데이터 형식을 맞추어 낙관적 업데이트 미반영 문제 해결",
     image: "",
     problem: [
-      "직업 등록 mutation에서 query key를 올바르게 사용했음에도 등록 즉시 화면에 반영되지 않음을 발견",
-      "JobSettingView.tsx에서 React Query 데이터를 useState로 한 번 복사해서 쓰고 있어, 캐시가 갱신돼도 컴포넌트가 변화를 읽지 못함을 diff로 확인",
-      "JobRegister.tsx의 setQueryData 콜백이 반환하는 구조가 GET /job 응답 스키마(jobs 배열)와 일치하지 않음을 확인"
+      "JobSettingView.tsx는 React Query가 반환하는 데이터를 useState에 담아 화면에 그리는 구조로 구현",
+      "직업 등록(POST) 기능과 낙관적 업데이트를 함께 처음 구현",
+      "위 구조에서 캐시가 갱신돼도 화면에는 반영되지 않아, 신규 등록한 직업이 새로고침 전에는 표출되지 않는 현상 발생"
     ],
     solution: [
-      "JobSettingView.tsx에서 local state 복사를 제거하고 useClassJobs() 결과를 직접 참조하도록 변경",
-      "JobRegister.tsx의 onMutate에서 setQueryData 콜백이 반환하는 구조를 GET 응답과 동일하게 맞춤",
+      "캐시 변화를 반영하지 못하던 동기화 로직을 제거하고 React Query 훅의 결과를 직접 참조하도록 변경",
+      "낙관적 업데이트가 정상 반영되려면 setQueryData에 넣는 데이터 형태를 GET 응답 구조(jobs 배열)와 동일하게 맞춰야 한다는 점을 파악해 스키마 일치",
       "실패 시 이전 데이터로 롤백하고 onSettled에서 invalidateQueries로 서버와 최종 동기화"
     ],
     result: [
-      "등록 즉시 UI에 반영되도록 정상화",
-      "실패 시 롤백 동작까지 확인 완료"
+      "낙관적 업데이트 미반영 문제 해결: 캐시를 직접 참조하고 응답 형태를 맞춘 이후로는 등록 즉시 화면에 반영되며, 실패 시에도 이전 데이터로 정상 롤백"
     ]
   },
   {
@@ -103,7 +102,7 @@ export const tsC: TSItemList = [
       "청크마다 말풍선이 중복 생성되는 것을 방지하기 위해 in-place로 갱신하도록 설계"
     ],
     result: [
-      "응답이 도착하는 순간부터 텍스트가 표시되는 타이핑 효과로 체감 대기시간 단축",
+      "체감 대기시간 단축: 응답이 도착하는 순간부터 텍스트가 표시되는 타이핑 효과로 전환되어, 사용자가 빈 화면을 기다리는 시간 감소",
     ]
   }
 ];
