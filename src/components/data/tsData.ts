@@ -1,3 +1,9 @@
+import tsA1 from "@/assets/ts_image/tsA_1.svg"
+import tsA2 from "@/assets/ts_image/tsA_2.svg"
+import tsB1 from "@/assets/ts_image/tsB.svg"
+import tsC1 from "@/assets/ts_image/tsC_1.svg"
+import tsC2 from "@/assets/ts_image/tsC_2.svg"
+
 export type TSItem = {
   title: string
   image: string
@@ -12,7 +18,7 @@ export type TSItemList = TSItem[]
 export const tsA: TSItemList = [
   {
     title: "Python에서 timezone 미설정으로 데이터 생성 시각과 표출 시각 사이 9시간 차이 발생 문제 해결",
-    image: "",
+    image: tsA1,
     problem: [
       "AI 서버에서 스케줄링을 통해 정시마다 인원 통계와 타임스탬프를 BE로 전송하는 구조로 설계",
       "BE는 Asia/Seoul(KST) 기준으로 데이터를 저장하고 조회",
@@ -22,12 +28,12 @@ export const tsA: TSItemList = [
       "AI 서버(Python)에서 timezone(timedelta(hours=9))으로 KST를 명시",
     ],
     result: [
-      "timezone 미설정으로 발생하던 9시간 오차 해결: AI 서버에서 KST를 명시해 전송한 이후로는 BE·FE 모두 별도 변환 로직 없이, 실제 촬영 시각과 일치하는 통계가 표시되도록 변경"
+      "시간 오차 해결: 스케줄링에서 KST를 명시하여 실제 촬영 시각과 일치하는 통계가 표시되도록 변경"
     ]
   },
   {
     title: "데이터 결측 상황에서도 안정적인 차트 표출을 위해 없는 시간대 값을 기본값으로 대체하여 크래시 해결",
-    image: "",
+    image: tsA2,
     problem: [
       "AI 서버는 집계된 데이터가 있을 때만 BE로 전송하도록 구현되어 있고, RTSP 스트림 다운이나 서버 재시작 등으로 집계 자체가 비는 예외 상황은 미반영",
       "BE는 GROUP BY 쿼리로 시간대별 데이터를 집계하여 클라이언트로 전송하고, FE에서는 08시~07시 고정으로 차트에 표시하도록 설계",
@@ -48,7 +54,7 @@ export const tsA: TSItemList = [
 export const tsB: TSItemList = [
   {
     title: "늦게 입장한 참가자의 정상적인 오디오 수신을 위해 오디오 활성화 타이머를 제거하고 즉시 publish하여 오디오 미출력 문제 해결",
-    image: "",
+    image: tsB1,
     problem: [
       "1:1 영상통화로 처음에 오디오 비활성화 상태로 연결하고 5초 후에 활성화하는 구조로 설계",
       "Openvidu 이벤트로 양쪽 입장을 확인한 후 5초 타이머가 작동하도록 구현",
@@ -71,7 +77,7 @@ export const tsB: TSItemList = [
 export const tsC: TSItemList = [
   {
     title: "직업 등록 결과의 즉각적인 화면 반영을 위해 캐시를 직접 참조하고 응답 데이터 형식을 맞추어 낙관적 업데이트 미반영 문제 해결",
-    image: "",
+    image: tsC1,
     problem: [
       "JobSettingView.tsx는 React Query가 반환하는 데이터를 useState에 담아 화면에 그리는 구조로 구현",
       "직업 등록(POST) 기능과 낙관적 업데이트를 함께 처음 구현",
@@ -88,7 +94,7 @@ export const tsC: TSItemList = [
   },
   {
     title: "챗봇 체감 응답 대기시간 감소를 위해 fetch ReadableStream을 활용하여 스트리밍 방식으로 전환",
-    image: "",
+    image: tsC2,
     problem: [
       "FE에서 입력받은 질문과 회원 ID를 BE(Python)로 전송하고, RAG 검색 기반 AI 응답 생성 후 FE로 반환하는 구조",
       "API 요청은 다른 기능에서도 공통적으로 사용한 axios를 이용하여 처리",

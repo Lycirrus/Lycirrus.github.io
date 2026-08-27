@@ -1,4 +1,5 @@
 import type { TSItem } from "../../data/tsData"
+import LightBox from "../../common/LightBox"
 
 interface ProjectTSProps {
   title: string
@@ -23,7 +24,7 @@ const ProjectTS = ({ title, textColor, bgColor, item, listLength, index }: Proje
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col mt-8 pb-12">
+      <div className="flex-1 flex flex-col mt-8 pb-12 overflow-y-auto">
         <div className="flex flex-col gap-4">
           {/* 제목 */}
           <p className="font-semibold text-base text-pf-black dark:text-pf-white leading-snug">
@@ -33,8 +34,8 @@ const ProjectTS = ({ title, textColor, bgColor, item, listLength, index }: Proje
           <div
             className="flex flex-col gap-3 text-sm text-pf-black dark:text-pf-white"
           >
-            <div className="h-50 flex flex-col gap-3 bg-pf-white dark:bg-pf-black rounded-xl p-5 border border-pf-gray-100 dark:border-pf-gray-300">
-              {item.image}
+            <div className="flex w-9/10 justify-center">
+              <LightBox src={item.image} alt={item.title} />
             </div>
             <div className="flex flex-col gap-3 pb-6">
               <p className="font-semibold">문제 원인</p>
