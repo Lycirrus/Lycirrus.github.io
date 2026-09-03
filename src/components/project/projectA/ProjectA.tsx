@@ -1,5 +1,5 @@
 import { IoEllipsisHorizontal } from "react-icons/io5"
-import { useRef } from "react"
+import { useRef, Fragment } from "react"
 import { useProjectScroll } from "../../../hooks/useProjectScroll"
 import ProjectTitle from "../common/ProjectTitle"
 import ProjectFeature from "../common/ProjectFeature"
@@ -9,6 +9,7 @@ import logo from "../../../assets/ssgg/logo.svg"
 import titleImage from "../../../assets/ssgg/title_image.svg"
 import { rolesA } from "../../data/roleData"
 import { tsA } from "../../data/tsData"
+import ProjectTSImage from "../common/ProjectTSImage"
 
 const stacks = ["React", "TypeScript", "FastAPI"]
 const outlines = [
@@ -80,16 +81,28 @@ const ProjectA = () => {
               />
             </div>
             {tsA.map((item, i) => (
-              <div key={i} className="absolute inset-0 slide">
-                <ProjectTS 
-                  title="시시각각" 
-                  textColor="text-pf-violet"
-                  bgColor="bg-pf-violet"
-                  item={item}
-                  listLength={listLength}
-                  index={i}
-                />
-              </div>
+              <Fragment key={i}>
+                <div key={`tsA-Image-${i}`} className="absolute inset-0 slide">
+                  <ProjectTSImage
+                    title="시시각각"
+                    textColor="text-pf-violet"
+                    bgColor="bg-pf-violet"
+                    item={item}
+                    listLength={listLength}
+                    index={i}
+                  />
+                </div>
+                <div key={`tsA-${i}`} className="absolute inset-0 slide">
+                  <ProjectTS 
+                    title="시시각각" 
+                    textColor="text-pf-violet"
+                    bgColor="bg-pf-violet"
+                    item={item}
+                    listLength={listLength}
+                    index={i}
+                  />
+                </div>
+              </Fragment>
             ))}
           </div>
         </div>

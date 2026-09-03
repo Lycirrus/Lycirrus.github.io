@@ -1,5 +1,5 @@
 import { IoEllipsisHorizontal } from "react-icons/io5"
-import { useRef } from "react"
+import { Fragment, useRef } from "react"
 import { useProjectScroll } from "../../../hooks/useProjectScroll"
 import ProjectTitle from "../common/ProjectTitle"
 import ProjectFeature from "../common/ProjectFeature"
@@ -9,6 +9,7 @@ import logo from "../../../assets/choco/logo.svg"
 import titleImage from "../../../assets/choco/title_image.svg"
 import { rolesB } from "../../data/roleData"
 import { tsB } from "../../data/tsData"
+import ProjectTSImage from "../common/ProjectTSImage"
 
 const stacks = ["React", "TypeScript", "OpenVidu"]
 const outlines = [
@@ -80,16 +81,28 @@ const ProjectB = () => {
               />
             </div>
             {tsB.map((item, i) => (
-              <div key={i} className="absolute inset-0 slide">
-                <ProjectTS 
-                  title="Chocoletter" 
-                  textColor="text-pf-pink"
-                  bgColor="bg-pf-pink"
-                  item={item}
-                  listLength={listLength}
-                  index={i}
-                />
-              </div>
+              <Fragment key={`tsB-${i}`}>
+                <div key={`tsB-Image-${i}`} className="absolute inset-0 slide">
+                  <ProjectTSImage
+                    title="Chocoletter"
+                    textColor="text-pf-pink"
+                    bgColor="bg-pf-pink"
+                    item={item}
+                    listLength={listLength}
+                    index={i}
+                  />
+                </div>
+                <div key={`tsB-${i}`} className="absolute inset-0 slide">
+                  <ProjectTS 
+                    title="Chocoletter" 
+                    textColor="text-pf-pink"
+                    bgColor="bg-pf-pink"
+                    item={item}
+                    listLength={listLength}
+                    index={i}
+                  />
+                </div>
+              </Fragment>
             ))}
           </div>
         </div>

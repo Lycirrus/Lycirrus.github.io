@@ -1,5 +1,5 @@
 import { IoEllipsisHorizontal } from "react-icons/io5"
-import { useRef } from "react"
+import { useRef, Fragment } from "react"
 import { useProjectScroll } from "../../../hooks/useProjectScroll"
 import ProjectTitle from "../common/ProjectTitle"
 import ProjectFeature from "../common/ProjectFeature"
@@ -9,6 +9,7 @@ import logo from "../../../assets/mw/logo.svg"
 import titleImage from "../../../assets/mw/title_image.svg"
 import { rolesC } from "../../data/roleData"
 import { tsC } from "../../data/tsData"
+import ProjectTSImage from "../common/ProjectTSImage"
 
 const stacks = ["React", "Tanstack Query", "PWA"]
 const outlines = [
@@ -79,16 +80,28 @@ const ProjectC = () => {
               />
             </div>
             {tsC.map((item, i) => (
-              <div key={i} className="absolute inset-0 slide">
-                <ProjectTS 
-                  title="머니위즈" 
-                  textColor="text-pf-blue"
-                  bgColor="bg-pf-blue"
-                  item={item}
-                  listLength={listLength}
-                  index={i}
-                />
-              </div>
+              <Fragment key={i}>
+                <div key={`tsC-Image-${i}`} className="absolute inset-0 slide">
+                  <ProjectTSImage
+                    title="머니위즈"
+                    textColor="text-pf-blue"
+                    bgColor="bg-pf-blue"
+                    item={item}
+                    listLength={listLength}
+                    index={i}
+                  />
+                </div>
+                <div key={`tsC-${i}`} className="absolute inset-0 slide">
+                  <ProjectTS 
+                    title="머니위즈" 
+                    textColor="text-pf-blue"
+                    bgColor="bg-pf-blue"
+                    item={item}
+                    listLength={listLength}
+                    index={i}
+                  />
+                </div>
+              </Fragment>
             ))}
           </div>
         </div>
